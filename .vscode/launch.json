@@ -1,0 +1,15 @@
+{
+    // LLDB调试
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "LLDB debug",
+            "program": "${workspaceFolder}/build/ystest",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build"
+        }
+    ]
+}

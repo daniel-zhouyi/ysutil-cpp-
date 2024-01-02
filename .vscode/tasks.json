@@ -1,0 +1,34 @@
+{
+    // 1. 调用CMake生成Makefile
+    // 2. 调用make进行编译，链接生成可执行文件
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cmake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                // 工作区目录下找CMakeLists.txt
+                "${workspaceFolder}",
+                "-B",
+                "${workspaceFolder}/build"
+            ],
+        },
+        {
+            "label": "make",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-C",
+                "${workspaceFolder}/build"
+            ],
+        },
+        {
+            "label": "build",
+            "dependsOn": [
+                "cmake",
+                "make"
+            ],
+        }
+    ]
+}
